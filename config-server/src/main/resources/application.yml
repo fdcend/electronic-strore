@@ -5,14 +5,12 @@ spring:
   application:
     name: config-server
 
-  config:
-    server:
-      git:
-<<<<<<< HEAD
-        uri: https://github.com/fdcend/electronic-strore
-=======
-        uri: url de repositorio remoto (git)
->>>>>>> ca3a7a8aad2d187df0e07f4d477f23239d7f4273
-        searchPaths: config-data
-        username: ${GIT_USER}
-        password: ${GIT_PASSWORD}
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/fdcend/electronic-strore
+          uri: url de repositorio remoto (git)
+          searchPaths: config-data
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
