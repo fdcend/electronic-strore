@@ -1,0 +1,30 @@
+eureka-service :8761
+products-service :8081
+products-service :8082
+carts-service :8083
+sales-service :8084
+config-server :8085
+api-gateway :443
+
+
+To run multiple instances of same profile of service
+
+	remove property from profile in yml (or properties) file -> server.port (this is in case of using remote configuration accessed through configuration server)
+	on running the war (or jar) set the property of port and profile in command line as follows
+java -jar -Dserver.port=7012 -Dspring.profiles.active=production demo-0.0.1-SNAPSHOT.jar
+
+java -jar -Dserver.port=7011 -Dspring.profiles.active=production demo-0.0.1-SNAPSHOT.jar
+
+
+intializr para products cart y sales:
+
+1  openFeign(en productos no, porque el no consume a nada)
+2  dev tools
+3  lombok
+4  spring web
+5  eureka discovery client
+6  actuator
+7  resilience4J
+8c loud LoadBalancer
+9S pring data JPA
+10 mySQL driver
