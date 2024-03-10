@@ -10,7 +10,6 @@ spring:
       server:
         git:
           uri: https://github.com/fdcend/electronic-strore
-          uri: url de repositorio remoto (git)
           searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
