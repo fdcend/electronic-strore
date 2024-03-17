@@ -1,0 +1,48 @@
+version: '1.0'
+
+services:
+  eureka-service:
+    build: eureka-sv
+    mem_limit: 256m
+    ports:
+      - "8761:8761"
+    networks:
+      - 'electronic-store-network'
+  api-gateway:
+    build: api-gateway
+    mem_limit: 256m
+    ports:
+      - "443:443"
+    networks:
+      - 'electronic-store-network'
+  config-server:
+    build: config-server
+    mem_limit: 256m
+    ports:
+      - "8085:8085"
+    networks:
+      - 'electronic-store-network'
+  products-service:
+    build: products-service
+    mem_limit: 256m
+    ports:
+      - "8081:8081"
+    networks:
+      - 'electronic-store-network'
+  carts-service:
+    build: cart-service
+    mem_limit: 256m
+    ports:
+      - "8083:8083"
+    networks:
+      - 'electronic-store-network'
+  sales-service:
+    build: sales-service
+    mem_limit: 256m
+    ports:
+      - "8084:8084"
+    networks:
+      - 'electronic-store-network'
+
+networks:
+  electronic-store-network:

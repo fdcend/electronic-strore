@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.fdcend</groupId>
 	<artifactId>cart-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>cart-service</name>
 	<description>cart service for &quot;online electronic store&quot; project</description>
 	<properties>
