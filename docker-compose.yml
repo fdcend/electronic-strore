@@ -1,13 +1,14 @@
-version: '1.0'
+version: '3.1'
 
 services:
   eureka-service:
-    build: eureka-sv
+    build: eureka-service
     mem_limit: 256m
     ports:
       - "8761:8761"
     networks:
       - 'electronic-store-network'
+  
   api-gateway:
     build: api-gateway
     mem_limit: 256m
@@ -15,6 +16,7 @@ services:
       - "443:443"
     networks:
       - 'electronic-store-network'
+  
   config-server:
     build: config-server
     mem_limit: 256m
@@ -22,13 +24,31 @@ services:
       - "8085:8085"
     networks:
       - 'electronic-store-network'
+
+  electronic_store_db:
+    container_name: java_db
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+    networks:
+      - electronic-store-network
+
   products-service:
     build: products-service
     mem_limit: 256m
     ports:
       - "8081:8081"
     networks:
-      - 'electronic-store-network'
+      - electronic-store-network
+    environment:
+      - spring.datasource.url=jdbc:mysql://electronic_store_db:3306/electronic_store_products?createDatabaseIfNotExist=true&serverTimezone=UTC
+    depends_on:
+      - electronic_store_db
+    restart: always
+
   carts-service:
     build: cart-service
     mem_limit: 256m
@@ -36,6 +56,12 @@ services:
       - "8083:8083"
     networks:
       - 'electronic-store-network'
+    environment:
+      - spring.datasource.url=jdbc:mysql://electronic_store_db:3306/electronic_store_carts?createDatabaseIfNotExist=true&serverTimezone=UTC
+    depends_on:
+      - electronic_store_db
+    restart: always
+  
   sales-service:
     build: sales-service
     mem_limit: 256m
@@ -43,6 +69,11 @@ services:
       - "8084:8084"
     networks:
       - 'electronic-store-network'
+    environment:
+      - spring.datasource.url=jdbc:mysql://electronic_store_db:3306/electronic_store_sales?createDatabaseIfNotExist=true&serverTimezone=UTC
+    depends_on:
+      - electronic_store_db
+    restart: always
 
 networks:
   electronic-store-network:
