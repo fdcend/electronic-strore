@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "2768584f-7b82-4f50-ab97-793a5063e2f5",
+		"name": "Electronic Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30284025"
+	},
+	"item": [
+		{
+			"name": "product get by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/products/get/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"products",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/products/get/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"products",
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productName\": \"televisor 55in\",\r\n\"productBrand\": \"LG\",\r\n\"productPrice\": \"400\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/products/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product edit by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/products/edit/2?newProductName=televisor 80in&newProductBrand=SAMSUNG&newProductPrice=900\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"products",
+						"edit",
+						"2"
+					],
+					"query": [
+						{
+							"key": "newProductName",
+							"value": "televisor 80in"
+						},
+						{
+							"key": "newProductBrand",
+							"value": "SAMSUNG"
+						},
+						{
+							"key": "newProductPrice",
+							"value": "900\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product delete by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/products/delete/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"products",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart get by ID (overview)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productsList\":[3,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/cart/get/overview/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"cart",
+						"get",
+						"overview",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart get by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productsList\":[3,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/cart/get/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"cart",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart get all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productsList\":[3,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/cart/get/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"cart",
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart get total price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8083/cart/get-total-price/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"cart",
+						"get-total-price",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart  add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productsList\":[3,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/cart/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"cart",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart edit add product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productsList\":[3,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/cart/edit/2/add-product/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"cart",
+						"edit",
+						"2",
+						"add-product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart edit delete product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productsList\":[3,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/cart/edit/3/delete-product/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"cart",
+						"edit",
+						"3",
+						"delete-product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart delete by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"productsList\":[3,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/cart/delete/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"cart",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cartId\": 3,\r\n  \"saleDate\": \"2024-03-03\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/sale/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"sale",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/sale/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"sale",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/sale/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"sale",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/sale/get/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"sale",
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sale edit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/sale/edit/1?cartId=2&saleDate=2021-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"sale",
+						"edit",
+						"1"
+					],
+					"query": [
+						{
+							"key": "cartId",
+							"value": "2"
+						},
+						{
+							"key": "saleDate",
+							"value": "2021-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
